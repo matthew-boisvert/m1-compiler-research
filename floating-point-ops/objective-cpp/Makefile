@@ -1,15 +1,14 @@
-# Source: https://www.softwaretestinghelp.com/cpp-makefile-tutorial/  
 CC = /opt/homebrew/opt/llvm/bin/clang++
 
-FLAGS = -L/opt/homebrew/opt/llvm/lib -fopenmp -O0
+FLAGS = -L/opt/homebrew/opt/llvm/lib -fopenmp -O3
  
-TARGET = gcd
+TARGET = main
  
 all: $(TARGET) 
 $(TARGET): $(TARGET).cpp
 	$(CC) $(FLAGS) -o $(TARGET) $(TARGET).cpp
 
-bc:
+llvm:
 	$(CC) $(FLAGS) -emit-llvm -c ${TARGET}.cpp
 
 ast:
