@@ -38,8 +38,7 @@ int main(int argc, char *argv[]) {
         a[i] = i;
     }
     for (int i = 0; i < SIZE; i++) {
-        int idx = rand() % SIZE;
-        b[i] = &a[idx];
+        b[i] = &a[i];
     }
     bool use_efficiency_cores = (strcmp(argv[1], "true") == 0);
     float duration = mem_access_kernel(b, SIZE, use_efficiency_cores);
